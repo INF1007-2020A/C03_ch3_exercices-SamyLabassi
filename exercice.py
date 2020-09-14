@@ -3,7 +3,7 @@
 
 
 import math
-
+#yo
 
 def average(a: float, b: float, c: float) -> float:
     mean = (a + b + c)/3
