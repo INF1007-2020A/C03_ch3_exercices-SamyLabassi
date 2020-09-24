@@ -16,13 +16,13 @@ def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float
 
 def to_degrees(angle_rads: float) -> tuple:
     angle_deg = angle_rads * 180 / math.pi
-    degs = int(angle_deg)
-    mins = (angle_deg - degs) * 60
-    secs = (mins - int(mins)) * 60
+    degs = angle_deg
+    mins = (degs % 1) * 60      # % 1 donne la partie decimale et // donne la partie entiere
+    secs = (mins % 1) * 60
 
     #angle = (angle_rads*360)/(2*math.pi)
     #degrees, minutes, seconds = math.floor(angle), math.floor(angle/60), math.floor(angle/3600) 
-    return degs, int(mins), secs
+    return int(degs), int(mins), secs
 
 
 def to_celsius(temperature: float) -> float:
